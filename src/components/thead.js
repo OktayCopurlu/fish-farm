@@ -1,19 +1,20 @@
 import { useState } from "react";
 
 export default function Thead(props) {
-  
   const [data] = useState(props.list);
+  
 
-  let newArray = null;
+  //Objenin başlıkları Object.keys() kullanılarak array içine alındı.
+  let objectKeys = null;
   data.map((eleman) => {
-    return (newArray = Object.keys(eleman));
+    return (objectKeys = Object.keys(eleman));
   });
 
   return (
       <thead>
         <tr>
-          {newArray.map((key, i) => {
-            return <th key={i}>{key}</th>;
+          {objectKeys.map((keys, i) => {
+            return <th key={i}>{keys}</th>;
           })}
         </tr>
       </thead>
